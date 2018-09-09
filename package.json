@@ -1,0 +1,22 @@
+{
+  "name": "mongoose-password",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlos-duran/mongoose-password.git"
+  },
+  "author": "Carlos Duran",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/carlos-duran/mongoose-password/issues"
+  },
+  "homepage": "https://github.com/carlos-duran/mongoose-password#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3"
+  }
+}
