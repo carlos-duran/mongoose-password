@@ -2,25 +2,25 @@ const bcrypt = require('bcryptjs')
 
 const plugin = (schema, {
   saltWorkFactor = 10,
-  passwordPath = 'password',
+  propertyName = 'password',
   methodName = 'comparePassword'
 } = {}) => {
   schema.add({
-    [passwordPath]: {
+    [propertyName]: {
       type: String,
       required: true
     }
   })
 
   schema.pre('save', async function () {
-    if (this.isModified('password')) {
+    if (this.isModified(propertyName)) {
       const salt = await bcrypt.genSalt(saltWorkFactor)
-      this.password = await bcrypt.hash(this.password, salt)
+      this[propertyName] = await bcrypt.hash(this[propertyName], salt)
     }
   })
 
   schema.methods[methodName] = async function (candidate) {
-    return bcrypt.compare(candidate, this.password)
+    return bcrypt.compare(candidate, this[propertyName])
   }
 }
 
