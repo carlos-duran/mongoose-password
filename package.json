@@ -1,7 +1,6 @@
 {
-  "name": "mongoose-password",
+  "name": "@carlos-duran/mongoose-password",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -18,5 +17,6 @@
   "homepage": "https://github.com/carlos-duran/mongoose-password#readme",
   "dependencies": {
     "bcryptjs": "^2.4.3"
-  }
+  },
+  "description": "Plugin that adds a bcryptjs password field to a mongoose schema."
 }
